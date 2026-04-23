@@ -1,0 +1,19 @@
+# PhishShield AI
+
+PhishShield AI is a web-based phishing detection system that analyzes messages and identifies potential scam risks.
+
+## Features
+- Detects phishing messages
+- Highlights suspicious keywords
+- Identifies malicious links
+- Provides AI-based explanation
+
+## How it works
+The system uses intelligent pattern detection to analyze text and classify it as safe or risky.
+
+## Demo
+Paste a suspicious message and click "Analyze" to see results.
+
+## SDG Goals
+- Industry, Innovation and Infrastructure
+- Peace, Justice and Strong Institutions
