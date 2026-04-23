@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishShield AI</title>
+</head>
+<body>
+
+<h2>PhishShield AI 🔐</h2>
+
+<textarea id="inputText" rows="5" cols="50" placeholder="Paste suspicious message here"></textarea><br><br>
+
+<button onclick="checkPhishing()">Check Message</button>
+
+<h3 id="result"></h3>
+<ul id="reasons"></ul>
+
+<script>
+function checkPhishing() {
+    let message = document.getElementById("inputText").value.toLowerCase();
+
+    let risk = "LOW";
+    let reasons = [];
+
+    let suspiciousWords = ["urgent", "bank", "password", "otp", "click", "verify"];
+
+    suspiciousWords.forEach(word => {
+        if (message.includes(word)) {
+            risk = "HIGH";
+            reasons.push("Contains suspicious word: " + word);
+        }
+    });
+
+    if (message.includes("http") || message.includes("www")) {
+        risk = "HIGH";
+        reasons.push("Contains a suspicious link");
+    }
+
+    document.getElementById("result").innerText = "Risk Level: " + risk;
+
+    let list = document.getElementById("reasons");
+    list.innerHTML = "";
+
+    reasons.forEach(r => {
+        let li = document.createElement("li");
+        li.innerText = r;
+        list.appendChild(li);
+    });
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishShield AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: none;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #22c55e;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #16a34a;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .high { color: #ef4444; }
+        .low { color: #22c55e; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🔐 PhishShield AI</h2>
+    <p>AI-powered phishing detection system</p>
+
+    <textarea id="inputText" rows="5" placeholder="Paste suspicious message here..."></textarea>
+
+    <button onclick="checkPhishing()">Analyze Message</button>
+
+    <div class="result">
+        <h3 id="risk"></h3>
+        <ul id="reasons"></ul>
+    </div>
+</div>
+
+<script>
+function checkPhishing() {
+    let message = document.getElementById("inputText").value.toLowerCase();
+
+    let risk = "LOW";
+    let reasons = [];
+
+    let suspiciousWords = ["urgent", "bank", "password", "otp", "click", "verify"];
+
+    suspiciousWords.forEach(word => {
+        if (message.includes(word)) {
+            risk = "HIGH";
+            reasons.push("Suspicious keyword detected: " + word);
+        }
+    });
+
+    if (message.includes("http") || message.includes("www")) {
+        risk = "HIGH";
+        reasons.push("Message contains a link");
+    }
+
+    let riskElement = document.getElementById("risk");
+    riskElement.innerText = "Risk Level: " + risk;
+
+    riskElement.className = (risk === "HIGH") ? "high" : "low";
+
+    let list = document.getElementById("reasons");
+    list.innerHTML = "";
+
+    reasons.forEach(r => {
+        let li = document.createElement("li");
+        li.innerText = r;
+        list.appendChild(li);
+    });
+}
+</script>
+
+</body>
+</html>
+
+<ul id="reasons"></ul>
+<p id="aiExplanation" style="margin-top:15px;"></p>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishShield AI</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        textarea {
+            width: 60%;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #22c55e;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #16a34a;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🔐 PhishShield AI</h1>
+<p>Detect phishing & scam messages instantly</p>
+
+<textarea id="inputText" rows="5" placeholder="Paste suspicious message here"></textarea><br><br>
+
+<button onclick="checkPhishing()">Analyze Message</button>
+
+<h3 id="result"></h3>
+<ul id="reasons"></ul>
+
+<script>
+function checkPhishing() {
+    let message = document.getElementById("inputText").value.toLowerCase();
+
+    let risk = "LOW";
+    let reasons = [];
+
+    let suspiciousWords = ["urgent", "bank", "password", "otp", "click", "verify"];
+
+    suspiciousWords.forEach(word => {
+        if (message.includes(word)) {
+            risk = "HIGH";
+            reasons.push("Suspicious keyword detected: " + word);
+        }
+    });
+
+    if (message.includes("http") || message.includes("www")) {
+        risk = "HIGH";
+        reasons.push("Suspicious link detected");
+    }
+
+    document.getElementById("result").innerText = "Risk Level: " + risk;
+
+    let list = document.getElementById("reasons");
+    list.innerHTML = "";
+
+    reasons.forEach(r => {
+        let li = document.createElement("li");
+        li.innerText = r;
+        list.appendChild(li);
+    });
+}
+</script>
+
+</body>
+</html>
+
+<script>
+function checkPhishing() {
+    let message = document.getElementById("inputText").value.toLowerCase();
+
+    let risk = "LOW";
+    let reasons = [];
+    let explanation = "";
+
+    let suspiciousWords = ["urgent", "bank", "password", "otp", "click", "verify"];
+
+    suspiciousWords.forEach(word => {
+        if (message.includes(word)) {
+            risk = "HIGH";
+            reasons.push("Suspicious keyword detected: " + word);
+        }
+    });
+
+    if (message.includes("http") || message.includes("www")) {
+        risk = "HIGH";
+        reasons.push("Suspicious link detected");
+    }
+
+    // AI-style explanation
+    if (risk === "HIGH") {
+        explanation = "This message shows patterns commonly used in phishing attacks such as urgency, financial terms, or suspicious links. Users should avoid clicking links or sharing sensitive data.";
+    } else {
+        explanation = "This message does not contain strong phishing indicators, but always stay cautious while sharing personal information.";
+    }
+
+    document.getElementById("result").innerText = "Risk Level: " + risk;
+
+    let list = document.getElementById("reasons");
+    list.innerHTML = "";
+
+    reasons.forEach(r => {
+        let li = document.createElement("li");
+        li.innerText = r;
+        list.appendChild(li);
+    });
+
+    // Show explanation
+    let exp = document.getElementById("explanation");
+    if (!exp) {
+        let newExp = document.createElement("p");
+        newExp.id = "explanation";
+        document.body.appendChild(newExp);
+        exp = newExp;
+    }
+
+    exp.innerText = "AI Explanation: " + explanation;
+}
+</script>
